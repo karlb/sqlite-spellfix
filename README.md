@@ -4,6 +4,12 @@ This python package includes a loadable `spellfix1` extension module for sqlite.
 
 ## Installation
 
+### Latest Release
+
+Install the `sqlite-spellfix` package from pypi.
+
+### Current Development Version
+
 Install via pip
 
 ```sh
