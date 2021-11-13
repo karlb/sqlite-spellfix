@@ -35,3 +35,6 @@ conn.enable_load_extension(True)
 conn.load_extension(sqlite_spellfix.extension_path())
 # now use as described in https://www.sqlite.org/spellfix1.html
 ```
+
+## See Also
+* [sqlite-icu python package](https://github.com/karlb/sqlite-icu)
