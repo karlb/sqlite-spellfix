@@ -9,7 +9,7 @@ with open(os.path.join(this_directory, "README.md"), encoding="utf-8") as f:
 
 spellfix1 = Extension(
     "spellfix1",
-    sources=["spellfix.c"] + (["sqlite/windows.cpp"] if os.name == 'nt' else []),
+    sources=["spellfix.c"] + (["sqlite/windows.c"] if os.name == 'nt' else []),
     include_dirs=[this_directory / "sqlite"] if os.name == 'nt' else []
 )
 
