@@ -13,13 +13,13 @@ Install the `sqlite-spellfix` package from pypi.
 Install via pip
 
 ```sh
-pip install git+git://github.com/karlb/sqlite-spellfix
+pip install git+https://github.com/karlb/sqlite-spellfix
 ```
 
 or add this to you requirements.txt:
 
 ```
-git+git://github.com/karlb/sqlite-spellfix
+git+https://github.com/karlb/sqlite-spellfix
 ```
 
 
