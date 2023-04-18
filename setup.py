@@ -1,16 +1,21 @@
 from setuptools import setup, Extension  # type: ignore
+import os
+from pathlib import Path
 
 # read the contents of README
-from os import path
-this_directory = path.abspath(path.dirname(__file__))
-with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
+this_directory = Path(os.path.abspath(os.path.dirname(__file__)))
+with open(os.path.join(this_directory, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
-spellfix1 = Extension("spellfix1", sources=["spellfix.c"])
+spellfix1 = Extension(
+    "spellfix1",
+    sources=["spellfix.c"] + (["sqlite/windows.c"] if os.name == 'nt' else []),
+    include_dirs=[this_directory / "sqlite"] if os.name == 'nt' else []
+)
 
 setup(
     name="sqlite-spellfix",
-    version="1.0",
+    version="1.0.1",
     description="Loadable spellfix1 extension for sqlite",
     py_modules=["sqlite_spellfix"],
     ext_modules=[spellfix1],
